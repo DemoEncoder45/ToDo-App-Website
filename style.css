@@ -1,0 +1,17 @@
+:root {
+    --primary-clr:#1664DA;  
+    --secondary-clr:#0C80DE;
+    --reject:#C63B3B;
+    --accept:#179852;
+}
+
+*,
+html,
+body {
+    margin:0;
+    padding:0;
+}
+
+body {
+    padding:1em;
+}
