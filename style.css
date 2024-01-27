@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 :root {
     --primary-clr:#1664DA;  
     --secondary-clr:#0C80DE;
     --reject:#C63B3B;
     --accept:#179852;
+    --main-font:'Poppins',sans-serif;
 }
 
 @font-face {
@@ -15,6 +18,7 @@ html,
 body {
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 
@@ -53,4 +57,96 @@ h1{
     width: 30px;
     border-radius: 25px;
     
+}
+
+.button {
+    cursor:pointer;
+    color:white;
+    padding:0.5em 1em;
+    font-family:var(--main-font);
+    font-size:1rem;
+    font-weight:800;
+    text-transform: uppercase;
+    border:none;
+    display:flex;
+    align-items:center;
+    border-radius:5px;
+    gap:1em;
+}
+
+.button--delete {
+    background-color:var(--reject);
+}
+
+.button--edit {
+    background-color:var(--primary-clr);
+}
+
+.task-list__task__options__buttons {
+    display:flex;
+    flex-wrap:wrap;
+    gap:1em;
+}
+
+.task-list {
+    margin-top:2em;
+    display:flex;
+    flex-direction:column;
+}
+
+.task-list__task {
+    padding:1em;
+    display:flex;
+    flex-direction:column;
+    border:2px solid var(--primary-clr);
+    border-radius:10px;
+    gap:1.5em;
+}
+
+.task-list__task__title {
+    overflow-wrap:break-word;
+    color:var(--dark-clr);
+    font-family:var(--main-font);
+    font-size:1rem;
+    font-weight:600;
+    text-align:center;
+    letter-spacing:0.1em;
+}
+
+.task-list__task__options {
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content: space-between;
+    gap:1em;
+}
+
+.task-list__task__options__check-task {
+    appearance: none;
+    cursor:pointer;
+    height:30px;
+    width:30px;
+    border-radius:5px;
+    border:2px solid var(--primary-clr);
+    position:relative;
+    overflow:hidden;
+}
+
+.task-list__task__options__check-task::before {
+    content:"";
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0%;
+    left:0%;
+    background-color:var(--accept);
+    background-image:url('./assets/check-icon.svg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    display:none;
+}
+
+.task-list__task__options__check-task:checked::before {
+    display:block;    
 }
