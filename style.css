@@ -5,6 +5,11 @@
     --accept:#179852;
 }
 
+@font-face {
+    font-family: headerFont;
+    src: url(assets/fonts/Satisfy-Regular.ttf);
+}
+
 *,
 html,
 body {
@@ -12,6 +17,40 @@ body {
     padding:0;
 }
 
+
 body {
     padding:1em;
+}
+
+
+h1{
+    text-align: center;
+    font-family: headerFont;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+#inputField{
+    width: 250px;
+    height: 25px;
+    border-radius: 25px;
+}
+
+#inputField::placeholder {
+    font-weight: lighter;
+    font-family: headerFont;
+    opacity: 0.5;
+    color: gray;
+    text-align: center;
+}
+
+#addItem {
+    width: 30px;
+    border-radius: 25px;
+    
 }
