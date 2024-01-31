@@ -119,6 +119,7 @@ h1{
     margin-top:2em;
     display:flex;
     flex-direction:column;
+    gap:1em;
 }
 
 .task-list__task {

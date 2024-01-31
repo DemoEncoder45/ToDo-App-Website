@@ -4,14 +4,11 @@ const input = document.getElementById("inputField")
 
 const taskContainer = document.getElementById('taskListContainer')
 
-const edit = document.getElementById("editButton")
-
-const erase = document.getElementById("deleteButton")
-
 add.addEventListener('click', function(){
-    const item = document.createElement('p')
     const task = document.createElement('div')
-    task.classList.add('task-styling')
+    const item = document.createElement('p')
+    task.classList.add('task-list__task')
+    item.classList.add('task-list__task__title');
     item.innerText = input.value
     task.appendChild(item)
     input.value = ""
