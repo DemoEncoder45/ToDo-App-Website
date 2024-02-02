@@ -22,8 +22,8 @@ add.addEventListener('click', function(){
     item.classList.add('task-list__task__title');
     check.classList.add('task-list__task__options__check-task')
     buttons.classList.add('task-list__task__options__buttons')
-    edit.classList.add('button button--edit')
-    erase.classList.add('button button--delete')
+    edit.setAttribute('class','button button--edit')
+    edit.setAttribute('class','button button--delete')
 
     item.innerText = input.value
     task.appendChild(item)
