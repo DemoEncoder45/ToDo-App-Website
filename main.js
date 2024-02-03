@@ -8,6 +8,7 @@ add.addEventListener('click', function(){
     const task = document.createElement('div')
     const item = document.createElement('p')
     
+    const taskListOptions = document.createElement('div');
     const check = document.createElement('input')
     check.setAttribute('type', 'checkbox')
     check.setAttribute('data-is-task-complete', 'false')
@@ -19,23 +20,29 @@ add.addEventListener('click', function(){
    
    
     task.classList.add('task-list__task')
+    taskListOptions.classList.add("task-list__task__options");
     item.classList.add('task-list__task__title');
     check.classList.add('task-list__task__options__check-task')
     buttons.classList.add('task-list__task__options__buttons')
+
     edit.setAttribute('class','button button--edit')
-    edit.setAttribute('class','button button--delete')
+    erase.setAttribute('class','button button--delete')
+    edit.append("edit");
+    erase.append("delete");
 
     item.innerText = input.value
-    task.appendChild(item)
-    input.value = ""
-    taskContainer.appendChild(task)
-    task.appendChild(check)
-    buttons.appendChild(edit)
-    buttons.appendChild(erase)
-    
-    
-    
 
-    
+    task.appendChild(item)
+
+    input.value = ""
+
+    taskContainer.appendChild(task)
+
+    buttons.appendChild(edit)
+    buttons.appendChild(erase) 
+   
+    taskListOptions.appendChild(check);
+    taskListOptions.appendChild(buttons);
+    task.appendChild(taskListOptions);
 })
 
