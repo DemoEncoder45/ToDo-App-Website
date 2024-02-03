@@ -71,7 +71,7 @@ function displayAllTask (taskList){
      console.log(taskList)
 
      taskList.forEach(function(task){
-        
+        const taskTitle = itemTitle;
      })
 
    
