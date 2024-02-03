@@ -31,10 +31,7 @@ add.addEventListener('click', function(){
     
 
     eraseIcon.src = './assets/delete-icon.svg';
-    editIcon.src = './assets/edit-icon.svg';
-    
-    edit.append("edit");
-    erase.append("delete");
+    editIcon.src = './assets/edit-icon.svg';    
 
     item.innerText = input.value
 
@@ -46,8 +43,8 @@ add.addEventListener('click', function(){
 
     taskContainer.appendChild(task)
 
-    erase.appendChild(eraseIcon, "delete")
-    edit.appendChild(editIcon, "edit")
+    erase.append(eraseIcon, "delete")
+    edit.append(editIcon, "edit")
     buttons.appendChild(edit)
     buttons.appendChild(erase) 
     
