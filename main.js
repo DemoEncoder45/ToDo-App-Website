@@ -56,9 +56,7 @@ function createTaskElement (taskName) {
 
 }
 
-add.addEventListener('click', function(){
-    
-})
+add.addEventListener('click' , createTaskElement)
 
 
 
