@@ -7,7 +7,6 @@ const taskContainer = document.getElementById('taskListContainer')
 add.addEventListener('click', function(){
     const task = document.createElement('div')
     const item = document.createElement('p')
-    
     const taskListOptions = document.createElement('div');
     const check = document.createElement('input')
     check.setAttribute('type', 'checkbox')
@@ -15,8 +14,10 @@ add.addEventListener('click', function(){
 
     const buttons = document.createElement('div')
     const edit = document.createElement('button')
-    
+    const editIcon = document.createElement('img')
     const erase = document.createElement('button')
+    const eraseIcon = document.createElement('img')
+
    
    
     task.classList.add('task-list__task')
@@ -27,10 +28,17 @@ add.addEventListener('click', function(){
 
     edit.setAttribute('class','button button--edit')
     erase.setAttribute('class','button button--delete')
+    
+
+    eraseIcon.src = './assets/delete-icon.svg';
+    editIcon.src = './assets/edit-icon.svg';
+    
     edit.append("edit");
     erase.append("delete");
 
     item.innerText = input.value
+
+    
 
     task.appendChild(item)
 
@@ -38,8 +46,11 @@ add.addEventListener('click', function(){
 
     taskContainer.appendChild(task)
 
+    erase.appendChild(eraseIcon, "delete")
+    edit.appendChild(editIcon, "edit")
     buttons.appendChild(edit)
     buttons.appendChild(erase) 
+    
    
     taskListOptions.appendChild(check);
     taskListOptions.appendChild(buttons);
