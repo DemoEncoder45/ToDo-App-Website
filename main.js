@@ -64,7 +64,7 @@ function createTaskElement (taskName) {
 add.addEventListener('click' , createTaskElement)
 
 
-function displayAllTask (taskList){
+function displayAllTask (){
 
-    taskList = storage.getAllItem
+    const taskList = storage.getAllItem()
 }
