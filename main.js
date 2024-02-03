@@ -6,11 +6,6 @@ const taskContainer = document.getElementById('taskListContainer')
 
 
 function createTaskElement (taskName) {
-
-    
-}
-
-add.addEventListener('click', function(){
     const task = document.createElement('div')
     const item = document.createElement('p')
     const taskListOptions = document.createElement('div');
@@ -58,6 +53,11 @@ add.addEventListener('click', function(){
     taskListOptions.appendChild(check);
     taskListOptions.appendChild(buttons);
     task.appendChild(taskListOptions);
+
+}
+
+add.addEventListener('click', function(){
+    
 })
 
 
