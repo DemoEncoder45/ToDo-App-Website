@@ -70,7 +70,9 @@ function displayAllTask (taskList){
 
      console.log(taskList)
 
-     taskList.forEach(displayAllTask)
+     taskList.forEach(function(task){
+        
+     })
 
    
 }
