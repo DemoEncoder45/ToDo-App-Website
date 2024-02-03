@@ -4,6 +4,12 @@ const input = document.getElementById("inputField")
 
 const taskContainer = document.getElementById('taskListContainer')
 
+
+function createTaskElement (taskName) {
+
+    
+}
+
 add.addEventListener('click', function(){
     const task = document.createElement('div')
     const item = document.createElement('p')
@@ -53,4 +59,6 @@ add.addEventListener('click', function(){
     taskListOptions.appendChild(buttons);
     task.appendChild(taskListOptions);
 })
+
+
 
