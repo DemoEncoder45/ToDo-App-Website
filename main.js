@@ -56,6 +56,8 @@ function createTaskElement (taskName) {
     taskListOptions.appendChild(buttons);
     task.appendChild(taskListOptions);
 
+    storage.addItem(input.value)
+
     input.value = ""
 }
 
