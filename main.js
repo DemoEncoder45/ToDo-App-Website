@@ -7,6 +7,8 @@ const input = document.getElementById("inputField")
 const taskContainer = document.getElementById('taskListContainer')
 
 
+const storage = new EZStorage(window.localStorage);
+
 function createTaskElement (taskName) {
     const task = document.createElement('div')
     const item = document.createElement('p')
@@ -42,8 +44,6 @@ function createTaskElement (taskName) {
 
     task.appendChild(item)
 
-    input.value = ""
-
     taskContainer.appendChild(task)
 
     erase.append(eraseIcon, "delete")
@@ -56,10 +56,7 @@ function createTaskElement (taskName) {
     taskListOptions.appendChild(buttons);
     task.appendChild(taskListOptions);
 
+    input.value = ""
 }
 
 add.addEventListener('click' , createTaskElement)
-
-
-
-const storage = new EZStorage(window.localStorage);
