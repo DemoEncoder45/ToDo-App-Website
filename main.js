@@ -1,3 +1,5 @@
+import EZStorage from "./lib/EZStorage.js"
+
 const add = document.getElementById("addItem")
 
 const input = document.getElementById("inputField")
@@ -60,3 +62,4 @@ add.addEventListener('click' , createTaskElement)
 
 
 
+const storage = new EZStorage(window.localStorage);
