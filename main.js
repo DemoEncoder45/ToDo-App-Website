@@ -62,3 +62,9 @@ function createTaskElement (taskName) {
 }
 
 add.addEventListener('click' , createTaskElement)
+
+
+function displayAllTask (taskList){
+
+    taskList = storage.getAllItem
+}
