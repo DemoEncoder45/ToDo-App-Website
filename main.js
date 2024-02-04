@@ -59,7 +59,7 @@ function createTaskElement (taskName, id) {
     erase.addEventListener('click', function(){
         const checkedTask = document.querySelector(`div[data-task-id="${id}"]`)
 
-        checkedTask.removeChild(taskContainer)
+        taskContainer.removeChild(checkedTask)
 
     })
 
