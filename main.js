@@ -38,9 +38,7 @@ function createTaskElement (taskName) {
     eraseIcon.src = './assets/delete-icon.svg';
     editIcon.src = './assets/edit-icon.svg';    
 
-    item.innerText = input.value
-
-    
+    item.innerText = taskName;
 
     task.appendChild(item)
 
@@ -56,24 +54,26 @@ function createTaskElement (taskName) {
     taskListOptions.appendChild(buttons);
     task.appendChild(taskListOptions);
 
-    storage.addItem(input.value)
-
-    input.value = ""
 }
 
-add.addEventListener('click' , createTaskElement)
+add.addEventListener('click' ,function () {
+    createTaskElement(input.value);
+    storage.addItem(input.value);
+
+    input.value = "";
+})
 
 
-function displayAllTask (taskList){
+function displayAllTask (){
 
-     taskList = storage.getAllItem()
-
-     console.log(taskList)
+     let taskList = storage.getAllItem()
 
      taskList.forEach(function(task){
-        const taskTitle = itemTitle;
+        const taskTitle = task.itemTitle;
+        createTaskElement(taskTitle);
      })
 
    
 }
 
+displayAllTask();
