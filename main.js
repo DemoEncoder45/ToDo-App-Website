@@ -62,8 +62,9 @@ function createTaskElement (taskName, id) {
 
 }
 
-add.addEventListener('click' ,function () {
-    createTaskElement(input.value);
+add.addEventListener('click' ,function () { 
+    createTaskElement(input.value,storage.getId());
+
     storage.addItem(input.value);
 
     input.value = "";
@@ -78,10 +79,9 @@ function displayAllTask (){
 
      taskList.forEach(function(task){
         const taskTitle = task.itemTitle;
-        createTaskElement(taskTitle);
+        const taskId = task.itemId;
+        createTaskElement(taskTitle,taskId);
      })
-
-   
 }
 
 displayAllTask();
