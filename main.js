@@ -2,8 +2,6 @@ import EZStorage from "./lib/EZStorage.js"
 
 const add = document.getElementById("addItem")
 
-const erase = document.getElementById('deleteItem')
-
 const input = document.getElementById("inputField")
 
 const taskContainer = document.getElementById('taskListContainer')
@@ -11,8 +9,9 @@ const taskContainer = document.getElementById('taskListContainer')
 
 const storage = new EZStorage(window.localStorage);
 
-function createTaskElement (taskName) {
+function createTaskElement (taskName, id) {
     const task = document.createElement('div')
+    task.setAttribute('data-task-id', id);
     const item = document.createElement('p')
     const taskListOptions = document.createElement('div');
     const check = document.createElement('input')
@@ -56,6 +55,10 @@ function createTaskElement (taskName) {
     taskListOptions.appendChild(buttons);
     task.appendChild(taskListOptions);
 
+    erase.addEventListener('click', function(){
+    
+    })
+
 }
 
 add.addEventListener('click' ,function () {
@@ -65,9 +68,7 @@ add.addEventListener('click' ,function () {
     input.value = "";
 })
 
-erase.addEventListener('click', function(){
-    
-})
+
 
 
 function displayAllTask (){
