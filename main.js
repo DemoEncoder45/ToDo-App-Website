@@ -61,6 +61,8 @@ function createTaskElement (taskName, id) {
 
         taskContainer.removeChild(checkedTask)
 
+        storage.deleteItem(id)
+
     })
 
 }
