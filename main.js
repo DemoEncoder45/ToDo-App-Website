@@ -2,6 +2,8 @@ import EZStorage from "./lib/EZStorage.js"
 
 const add = document.getElementById("addItem")
 
+const erase = document.getElementById('deleteItem')
+
 const input = document.getElementById("inputField")
 
 const taskContainer = document.getElementById('taskListContainer')
@@ -61,6 +63,10 @@ add.addEventListener('click' ,function () {
     storage.addItem(input.value);
 
     input.value = "";
+})
+
+erase.addEventListener('click', function(){
+    
 })
 
 
