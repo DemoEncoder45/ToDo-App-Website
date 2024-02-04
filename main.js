@@ -57,7 +57,7 @@ function createTaskElement (taskName, id) {
     task.appendChild(taskListOptions);
 
     erase.addEventListener('click', function(){
-        const checkedTask = document.querySelector('div[attribute="id"]')
+        const checkedTask = document.querySelector(`div[data-task-id=${id}]`)
     })
 
 }
