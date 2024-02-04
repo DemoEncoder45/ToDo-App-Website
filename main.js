@@ -12,6 +12,7 @@ const storage = new EZStorage(window.localStorage);
 function createTaskElement (taskName, id) {
     const task = document.createElement('div')
     task.setAttribute('data-task-id', id);
+
     const item = document.createElement('p')
     const taskListOptions = document.createElement('div');
     const check = document.createElement('input')
@@ -56,7 +57,7 @@ function createTaskElement (taskName, id) {
     task.appendChild(taskListOptions);
 
     erase.addEventListener('click', function(){
-    
+        const checkedTask = document.querySelector('div[attribute="id"]')
     })
 
 }
