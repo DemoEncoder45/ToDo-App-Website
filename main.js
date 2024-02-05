@@ -20,6 +20,7 @@ function createTaskElement (taskName, id, taskState) {
     const check = document.createElement('input')
     check.setAttribute('type', 'checkbox')
     check.setAttribute('data-is-task-complete', 'false')
+    check.setAttribute('data-task-complete',taskState)
 
     const buttons = document.createElement('div')
     const edit = document.createElement('button')
