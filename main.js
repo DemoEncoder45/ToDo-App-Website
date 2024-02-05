@@ -9,20 +9,18 @@ const taskContainer = document.getElementById('taskListContainer')
 
 const storage = new EZStorage(window.localStorage);
 
-function createTaskElement (taskName, id, taskState) {
+function createTaskElement (taskName, id,taskState) {
     const task = document.createElement('div')
     task.setAttribute('data-task-id', id);
     
 
     const item = document.createElement('p')
-    item.setAttribute('data-task-complete',taskState)
+    item.setAttribute('data-is-task-complete',taskState);
     const taskListOptions = document.createElement('div');
     const check = document.createElement('input')
     check.setAttribute('type', 'checkbox')
-    check.setAttribute('data-is-task-complete', 'false')
-    check.setAttribute('data-task-complete',taskState)
-
-
+    check.setAttribute('data-is-task-complete',taskState)
+    check.setAttribute('data-task-id',id)
 
     const buttons = document.createElement('div')
     const edit = document.createElement('button')
@@ -70,26 +68,23 @@ function createTaskElement (taskName, id, taskState) {
 
     })
 
-    check.addEventListener('click', function(){
-
-        if (check.dataset.isTaskComplete === 'true'){
-
+    check.addEventListener('click',function(){
+        if(this.dataset.isTaskComplete === "true"){
             storage.removeCheckItem(this.dataset.taskId);
-            this.parentElement.previousElementSibling.dataset.isTaskComplete = 'false';
-
-            this.dataset.isTaskComplete = 'false'
-        } else {
-            storage.removeCheckItem(this.dataset.taskId);
-            this.parentElement.previousElementSibling.dataset.isTaskComplete = 'true';
-
-            this.dataset.isTaskComplete = 'true'
+            this.parentElement.previousElementSibling.dataset.isTaskComplete = "false";
+            this.dataset.isTaskComplete = "false";
+        }
+        else {
+            storage.checkItem(this.dataset.taskId);
+            this.parentElement.previousElementSibling.dataset.isTaskComplete = "true";
+            this.dataset.isTaskComplete = "true";
         }
     })
 
 }
 
 add.addEventListener('click' ,function () { 
-    createTaskElement(input.value,storage.getId());
+    createTaskElement(input.value,storage.getId(),"false");
 
     storage.addItem(input.value);
 
@@ -106,7 +101,8 @@ function displayAllTask (){
      taskList.forEach(function(task){
         const taskTitle = task.itemTitle;
         const taskId = task.itemId;
-        createTaskElement(taskTitle,taskId);
+        const taskState = task.checked;
+        createTaskElement(taskTitle,taskId,taskState);
      })
 }
 
