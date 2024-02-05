@@ -22,6 +22,8 @@ function createTaskElement (taskName, id, taskState) {
     check.setAttribute('data-is-task-complete', 'false')
     check.setAttribute('data-task-complete',taskState)
 
+
+
     const buttons = document.createElement('div')
     const edit = document.createElement('button')
     const editIcon = document.createElement('img')
@@ -66,6 +68,22 @@ function createTaskElement (taskName, id, taskState) {
 
         storage.deleteItem(id)
 
+    })
+
+    check.addEventListener('click', function(){
+
+        if (check.dataset.isTaskComplete === 'true'){
+
+            storage.removeCheckItem(check.dataset.taskId);
+            check.parentElement.previousElementSibling.dataset.isTaskComplete = 'false';
+
+            check.dataset.isTaskComplete = 'false'
+        } else {
+            storage.removeCheckItem(check.dataset.taskId);
+            check.parentElement.previousElementSibling.dataset.isTaskComplete = 'true';
+
+            check.dataset.isTaskComplete = 'true'
+        }
     })
 
 }
