@@ -9,11 +9,13 @@ const taskContainer = document.getElementById('taskListContainer')
 
 const storage = new EZStorage(window.localStorage);
 
-function createTaskElement (taskName, id) {
+function createTaskElement (taskName, id, taskState) {
     const task = document.createElement('div')
     task.setAttribute('data-task-id', id);
+    
 
     const item = document.createElement('p')
+    item.setAttribute('data-task-complete',taskState)
     const taskListOptions = document.createElement('div');
     const check = document.createElement('input')
     check.setAttribute('type', 'checkbox')
