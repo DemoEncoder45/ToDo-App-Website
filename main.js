@@ -74,15 +74,15 @@ function createTaskElement (taskName, id, taskState) {
 
         if (check.dataset.isTaskComplete === 'true'){
 
-            storage.removeCheckItem(check.dataset.taskId);
-            check.parentElement.previousElementSibling.dataset.isTaskComplete = 'false';
+            storage.removeCheckItem(this.dataset.taskId);
+            this.parentElement.previousElementSibling.dataset.isTaskComplete = 'false';
 
-            check.dataset.isTaskComplete = 'false'
+            this.dataset.isTaskComplete = 'false'
         } else {
-            storage.removeCheckItem(check.dataset.taskId);
-            check.parentElement.previousElementSibling.dataset.isTaskComplete = 'true';
+            storage.removeCheckItem(this.dataset.taskId);
+            this.parentElement.previousElementSibling.dataset.isTaskComplete = 'true';
 
-            check.dataset.isTaskComplete = 'true'
+            this.dataset.isTaskComplete = 'true'
         }
     })
 
