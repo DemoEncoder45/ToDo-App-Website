@@ -87,7 +87,7 @@ function createTaskElement (taskName, id,taskState) {
 
         storage.editItem(this.dataset.taskId, newTaskTitleValue)
 
-        this.parentElement.parentElement.children[0].innerText = newTaskTitleValue
+        this.parentElement.parentElement.parentElement.children[0].innerText = newTaskTitleValue
 
 
 
