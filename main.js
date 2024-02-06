@@ -24,6 +24,7 @@ function createTaskElement (taskName, id,taskState) {
 
     const buttons = document.createElement('div')
     const edit = document.createElement('button')
+    edit.setAttribute("data-task-id", id)
     const editIcon = document.createElement('img')
     const erase = document.createElement('button')
     const eraseIcon = document.createElement('img')
@@ -79,6 +80,18 @@ function createTaskElement (taskName, id,taskState) {
             this.parentElement.previousElementSibling.dataset.isTaskComplete = "true";
             this.dataset.isTaskComplete = "true";
         }
+    })
+
+    edit.addEventListener('click', function(){
+        const newTaskTitleValue = prompt("Type the new Name of the Task Here!");
+
+        storage.editItem(this.dataset.taskId, newTaskTitleValue)
+
+        
+
+
+
+
     })
 
 }
